@@ -42,7 +42,7 @@ test.describe("1. Sign in:", () => {
         MESSAGES.SIGNIN_ERROR
       );
     });
-    test.only("[func] TC006: Login fail with invalid email", async () => {
+    test("[func] TC006: Login fail with invalid email", async () => {
       await signInPage.login({
         email: faker.internet.email(),
         password: DATA.credential1.password,
