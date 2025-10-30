@@ -14,6 +14,7 @@ export class SignUpPage extends BasePage {
   readonly lastNameInput;
   readonly emailInput;
   readonly passwordInput;
+  readonly errorEmailInUse;
   constructor(page: Page, context: any) {
     super(page, context);
     this.titleSignUp = page.locator(
@@ -30,6 +31,7 @@ export class SignUpPage extends BasePage {
     this.lastNameInput = page.locator(`#lastName`);
     this.emailInput = page.locator(`#email`);
     this.passwordInput = page.locator(`#password`);
+    this.errorEmailInUse = page.locator(`//div[@role='alert']`);
   }
 
   async checkComponentOnSignUpScreen(): Promise<void> {

@@ -20,7 +20,7 @@ test.describe("2. Sign Up page:", () => {
     await signUpPage.checkComponentOnSignUpScreen();
   });
   test.describe(`2.2. Register`, async () => {
-    test.only("[func] TC002: Register to the platform successful", async () => {
+    test("[func] TC002: Register to the platform successful", async () => {
       const firstName = faker.name.firstName();
       const lastName = faker.name.lastName();
       const email = faker.internet.email();
@@ -31,6 +31,15 @@ test.describe("2. Sign Up page:", () => {
         email: email,
         password: password,
       });
+    });
+    test("[func] TC003: Register fail with existing email", async () => {
+      await signUpPage.register({
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        email: DATA.credential1.email,
+        password: faker.internet.password(),
+      });
+      await signUpPage.waitUntilVisible(signUpPage.errorEmailInUse);
     });
   });
 });

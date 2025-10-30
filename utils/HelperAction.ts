@@ -12,4 +12,5 @@ export const MESSAGES = {
   FORGET_PASSWORD_REQUIRED:
     "Vui lòng cung cấp email đăng nhập, chúng tôi sẽ gửi link kích hoạt cho bạn.",
   SIGNIN_ERROR: "Invalid username or password. Please try again.",
+  SIGNUP_ERROR_EXISTED: "Email already exists. Please try again.",
 };
