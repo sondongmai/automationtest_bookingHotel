@@ -16,7 +16,7 @@ test.describe("2. Sign Up page:", () => {
     await signInPage.waitAndClick(signInPage.registerBtn);
   });
   test.describe(" 2.1. UI", async () => {});
-  test.only("[UI] TC001: Verify that all component is displayed on Sign Up Screen", async () => {
+  test("[UI] TC001: Verify that all component is displayed on Sign Up Screen", async () => {
     await signUpPage.checkComponentOnSignUpScreen();
   });
   test.describe(`2.2. Register`, async () => {
